@@ -10,17 +10,18 @@
 <body>
 
 <header>
-  <div data-hi="संपर्क करें" data-en="Contact Us"></div>
-  <nav>
-    <a href="index.html" data-hi="होम" data-en="Home"></a>
-    <a href="products.html" data-hi="उत्पाद" data-en="Products"></a>
-    <a href="services.html" data-hi="सेवाएं" data-en="Services"></a>
-    <a href="about.html" data-hi="हमारे बारे में" data-en="About Us"></a>
-    <a href="contact.html" data-hi="संपर्क" data-en="Contact"></a>
-    <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
-    <button class="lang-btn" onclick="setLanguage('en')">English</button>
-  </nav>
-</header>
+    <h1 data-hi="एसएचजी उत्पाद पोर्टल" data-en="SHG Product Portal"></h1>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
+      <a href="index.html" data-hi="होम" data-en="Home"></a>
+      <a href="products.html" data-hi="उत्पाद" data-en="Products"></a>
+      <a href="services.html" data-hi="सेवाएं" data-en="Services"></a>
+      <a href="about.html" data-hi="हमारे बारे में" data-en="About"></a>
+      <a href="contact.html" data-hi="संपर्क करें" data-en="Contact"></a>
+    </nav>
+  </header>
 
 <div class="container">
   <p data-hi="फोन: 98XXXXXX" data-en="Phone: 98XXXXXX"></p>
@@ -41,5 +42,6 @@
   
 </body>
 </html>
+
 
 
