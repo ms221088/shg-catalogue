@@ -26,7 +26,18 @@
     <p id="aboutText">यह कैटलॉग बदायूं जिले के स्वयं सहायता समूहों द्वारा बनाए गए उत्पादों और सेवाओं को प्रदर्शित करता है।</p>
 </section>
 
-<script src="lang.js" defer></script>
+<script src="script.js" defer></script>
+  <script>
+  const links = document.querySelectorAll("nav a");
+  const currentPage = window.location.pathname.split("/").pop();
+
+  links.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
 </body>
 </html>
 
