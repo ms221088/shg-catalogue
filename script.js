@@ -10,4 +10,9 @@ function applyLanguage() {
   });
 }
 
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("show");
+}
+
 window.onload = applyLanguage;
+
