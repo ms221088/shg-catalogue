@@ -9,15 +9,24 @@
 <body>
 
 <header>
-  <div data-hi="स्वयं सहायता समूहों के उत्पाद और सेवाएँ" data-en="Self Help Group Products & Services"></div>
-  <nav>
+  <h1 data-hi="स्वयं सहायता समूह उत्पाद एवं सेवाएँ पोर्टल" data-en="Self Help Groups Products & Services Portal"></h1>
+
+  <!-- Language Toggle -->
+  <div class="lang-buttons">
+    <button onclick="setLanguage('hi')">हिंदी</button>
+    <button onclick="setLanguage('en')">English</button>
+  </div>
+
+  <!-- Hamburger -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <!-- Navigation -->
+  <nav id="navMenu">
     <a href="index.html" data-hi="होम" data-en="Home"></a>
     <a href="products.html" data-hi="उत्पाद" data-en="Products"></a>
     <a href="services.html" data-hi="सेवाएं" data-en="Services"></a>
-    <a href="about.html" data-hi="हमारे बारे में" data-en="About Us"></a>
-    <a href="contact.html" data-hi="संपर्क" data-en="Contact"></a>
-    <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
-    <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    <a href="about.html" data-hi="हमारे बारे में" data-en="About"></a>
+    <a href="contact.html" data-hi="संपर्क करें" data-en="Contact"></a>
   </nav>
 </header>
 
@@ -50,6 +59,7 @@
   
 </body>
 </html>
+
 
 
 
