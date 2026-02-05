@@ -11,15 +11,19 @@
 
 <body>
 
-<nav class="navbar">
-    <a href="index.html" id="navHome">होम</a>
-    <a href="products.html" id="navProducts">उत्पाद</a>
-    <a href="services.html" id="navServices">सेवाएँ</a>
-    <a href="about.html" id="navAbout">हमारे बारे में</a>
-    <a href="contact.html" id="navContact">संपर्क करें</a>
-    <button onclick="setLanguage('en')" class="lang-btn">English</button>
-    <button onclick="setLanguage('hi')" class="lang-btn">हिन्दी</button>
-</nav>
+<header>
+    <h1 data-hi="एसएचजी उत्पाद पोर्टल" data-en="SHG Product Portal"></h1>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
+      <a href="index.html" data-hi="होम" data-en="Home"></a>
+      <a href="products.html" data-hi="उत्पाद" data-en="Products"></a>
+      <a href="services.html" data-hi="सेवाएं" data-en="Services"></a>
+      <a href="about.html" data-hi="हमारे बारे में" data-en="About"></a>
+      <a href="contact.html" data-hi="संपर्क करें" data-en="Contact"></a>
+    </nav>
+  </header>
 
 
 <section class="categories">
@@ -42,6 +46,7 @@
 
 </body>
 </html>
+
 
 
 
