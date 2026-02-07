@@ -1,18 +1,16 @@
-function setLanguage(lang) {
-  localStorage.setItem("lang", lang);
-  applyLanguage();
-}
+function filterItems() {
+  const cat = document.getElementById("fCategory")?.value || "";
+  const block = document.getElementById("fBlock")?.value || "";
 
-function applyLanguage() {
-  const lang = localStorage.getItem("lang") || "hi";
-  document.querySelectorAll("[data-hi]").forEach(el => {
-    el.textContent = el.getAttribute("data-" + lang);
+  document.querySelectorAll(".card").forEach(card => {
+    const show =
+      (cat === "" || card.dataset.category === cat) &&
+      (block === "" || card.dataset.block === block);
+
+    card.style.display = show ? "flex" : "none";
   });
 }
 
-function toggleMenu() {
-  document.getElementById("navMenu").classList.toggle("show");
+function goBack() {
+  history.back();
 }
-
-window.onload = applyLanguage;
-
