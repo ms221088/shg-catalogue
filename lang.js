@@ -8,6 +8,6 @@ function setLang(lang) {
 }
 
 window.addEventListener("load", () => {
-  const lang = localStorage.getItem("lang") || "hi";
-  setLang(lang);
+  const saved = localStorage.getItem("lang") || "hi";
+  setLang(saved);
 });
