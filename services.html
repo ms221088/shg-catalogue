@@ -3,7 +3,6 @@
 <head>
   <title>Services</title>
   <link rel="stylesheet" href="style.css">
-  <script src="lang.js"></script>
 </head>
 <body>
 
@@ -12,35 +11,29 @@
 <div class="container">
   <div class="breadcrumb">Home > Services</div>
 
-  <div class="card" data-category="service" data-block="usawan">
+  <div class="card">
     <div>
       <h3 data-hi="ड्रोन दीदी सेवा" data-en="Drone Didi Service"></h3>
       <p data-hi="दर: ₹400 प्रति एकड़" data-en="Rate: ₹400 per acre"></p>
-      <p data-hi="नाम: श्रीमती पूजा" data-en="Name: Smt. Pooja"></p>
       <p data-hi="संपर्क: 7895403652 / 7983153273" data-en="Contact: 7895403652 / 7983153273"></p>
-            <p data-hi="पता: ग्राम पंचायात – ब्यौर, विकास खण्ड – सालारपुर, बदायूँ |" data-en="Address: Gram Panchayat - Byour, Block - Salarpur, Budaun."></p>
+      <p data-hi="पता: ग्राम पंचायात – ब्यौर, विकास खण्ड – सालारपुर, बदायूँ |" data-en="Address: Gram Panchayat- Byour, Block - Salarpur, Budaun."></p>
     </div>
-    <img src="images/drone.png" alt="Drone Didi spraying crops in field">
+    <img src="https://via.placeholder.com/220" alt="Drone service">
   </div>
 </div>
 
 <div id="footer"></div>
 
+<script src="lang.js"></script>
 <script>
-fetch("header.html")
-  .then(r => r.text())
-  .then(d => {
-    document.getElementById("header").innerHTML = d;
-    setLang(localStorage.getItem("lang") || "hi");
-  });
-
-fetch("footer.html")
-  .then(r => r.text())
-  .then(d => {
-    document.getElementById("footer").innerHTML = d;
-  });
+fetch("header.html").then(r=>r.text()).then(d=>{
+  document.getElementById("header").innerHTML=d;
+  setLang(localStorage.getItem("lang")||"hi");
+});
+fetch("footer.html").then(r=>r.text()).then(d=>{
+  document.getElementById("footer").innerHTML=d;
+});
 </script>
-
 
 </body>
 </html>
