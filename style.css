@@ -68,3 +68,20 @@ body {
     flex-direction: column;
   }
 }
+
+.logo {
+  width: 56px;
+  height: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-main {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
