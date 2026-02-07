@@ -40,7 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("open");
+  const nav = document.getElementById("navLinks");
+  if (nav) {
+    nav.classList.toggle("open");
+  }
 }
+
+
 
 
