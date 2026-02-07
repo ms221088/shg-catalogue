@@ -70,9 +70,12 @@ body {
 }
 
 .logo {
-  width: 56px;
-  height: auto;
+  height: 40px;
+  width: auto;
+  max-width: 40px;
+  object-fit: contain;
 }
+
 
 .brand {
   display: flex;
@@ -85,3 +88,4 @@ body {
   font-weight: bold;
   color: #ffffff;
 }
+
