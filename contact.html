@@ -1,57 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Contact</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="lang.js"></script>
 </head>
 <body>
 
-<header>
-  <h1 data-hi="स्वयं सहायता समूह उत्पाद एवं सेवाएँ पोर्टल" data-en="Self Help Groups Products & Services Portal"></h1>
-
-  <!-- Language Toggle -->
-  <div class="lang-buttons">
-    <button onclick="setLanguage('hi')">हिंदी</button>
-    <button onclick="setLanguage('en')">English</button>
-  </div>
-
-  <!-- Hamburger -->
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-  <!-- Navigation -->
-  <nav id="navMenu">
-    <a href="index.html" data-hi="होम" data-en="Home"></a>
-    <a href="products.html" data-hi="उत्पाद" data-en="Products"></a>
-    <a href="services.html" data-hi="सेवाएं" data-en="Services"></a>
-    <a href="about.html" data-hi="हमारे बारे में" data-en="About"></a>
-    <a href="contact.html" data-hi="संपर्क करें" data-en="Contact"></a>
-  </nav>
-</header>
+<div id="header"></div>
 
 <div class="container">
-  <p data-hi="फोन: 98XXXXXX" data-en="Phone: 98XXXXXX"></p>
-  <p data-hi="ईमेल: example@gmail.com" data-en="Email: example@gmail.com"></p>
+  <h2 data-hi="संपर्क करें" data-en="Contact Us"></h2>
+  <p>Email: upsrlm.budaun@gmail.com</p>
 </div>
 
-<script>
-  const links = document.querySelectorAll("nav a");
-  const currentPage = window.location.pathname.split("/").pop();
+<div id="footer"></div>
 
-  links.forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active");
-    }
+<script>
+fetch("header.html")
+  .then(r => r.text())
+  .then(d => {
+    document.getElementById("header").innerHTML = d;
+    setLang(localStorage.getItem("lang") || "hi");
+  });
+
+fetch("footer.html")
+  .then(r => r.text())
+  .then(d => {
+    document.getElementById("footer").innerHTML = d;
   });
 </script>
 
-  
+
 </body>
 </html>
-
-
-
-
-
