@@ -19,4 +19,24 @@ function goBack() {
   }
 }
 
+// Breadcrumb current page label
+document.addEventListener("DOMContentLoaded", () => {
+  const current = document.querySelector(".breadcrumb .current");
+  if (!current) return;
+
+  const pageMap = {
+    "products.html": { hi: "उत्पाद", en: "Products" },
+    "services.html": { hi: "सेवाएँ", en: "Services" },
+    "about.html": { hi: "हमारे बारे में", en: "About Us" },
+    "contact.html": { hi: "संपर्क करें", en: "Contact" }
+  };
+
+  const page = location.pathname.split("/").pop();
+  const lang = localStorage.getItem("lang") || "hi";
+
+  if (pageMap[page]) {
+    current.textContent = pageMap[page][lang];
+  }
+});
+
 
