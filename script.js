@@ -12,5 +12,11 @@ function filterItems() {
 }
 
 function goBack() {
-  history.back();
+  if (document.referrer) {
+    history.back();
+  } else {
+    location.href = "index.html";
+  }
 }
+
+
