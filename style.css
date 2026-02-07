@@ -89,3 +89,20 @@ body {
   color: #ffffff;
 }
 
+/* Header & logo mobile fix */
+@media (max-width: 768px) {
+  .logo {
+    height: 32px;
+    max-width: 32px;
+  }
+
+  .title-main {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+}
+
