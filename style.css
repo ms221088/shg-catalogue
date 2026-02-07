@@ -5,8 +5,6 @@ body {
   line-height: 1.6;
 }
 
-
-
 .site-header {
   background: #1b5e20;
   padding: 10px 16px;
@@ -21,9 +19,15 @@ body {
 
 .nav-links a {
   color: #ffffff;
-  font-weight: 600;
   margin-right: 14px;
   text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links a:focus,
+.lang-toggle button:focus {
+  outline: 3px solid #ffeb3b;
+  outline-offset: 2px;
 }
 
 .lang-toggle button {
@@ -39,11 +43,6 @@ body {
   margin-bottom: 12px;
 }
 
-.filters select {
-  padding: 6px;
-  margin-right: 10px;
-}
-
 .card {
   display: flex;
   gap: 20px;
@@ -55,7 +54,6 @@ body {
 .card img {
   width: 220px;
   max-width: 100%;
-  height: auto;
 }
 
 .site-footer {
@@ -69,14 +67,4 @@ body {
   .card {
     flex-direction: column;
   }
-
-  .nav-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-a:focus, button:focus, select:focus {
-  outline: 3px solid #ffeb3b;
-  outline-offset: 2px;
 }
