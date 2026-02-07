@@ -3,7 +3,6 @@
 <head>
   <title>SHG Catalogue</title>
   <link rel="stylesheet" href="style.css">
-  <script src="lang.js"></script>
 </head>
 <body>
 
@@ -24,6 +23,8 @@
 
 <div id="footer"></div>
 
+<script src="lang.js"></script>
+<script src="script.js"></script>
 <script>
 fetch("header.html")
   .then(r => r.text())
@@ -38,7 +39,6 @@ fetch("footer.html")
     document.getElementById("footer").innerHTML = d;
   });
 </script>
-
 
 </body>
 </html>
