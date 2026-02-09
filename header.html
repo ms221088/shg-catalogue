@@ -4,7 +4,11 @@
     <span class="title-main">Self Help Groups – Products & Services</span>
   </div>
 
-  <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">☰</button>
+  <div class="header-actions">
+    <button class="lang-btn" onclick="setLang('hi')">हिं</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
 
   <nav class="nav-links" id="navLinks">
     <a href="index.html" data-hi="होम" data-en="Home"></a>
@@ -13,6 +17,4 @@
     <a href="about.html" data-hi="हमारे बारे में" data-en="About"></a>
     <a href="contact.html" data-hi="संपर्क" data-en="Contact"></a>
   </nav>
-
-  <button class="lang-toggle" onclick="toggleLang()">हिं / EN</button>
 </header>
