@@ -3,11 +3,14 @@ function setLang(lang) {
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-hi]").forEach(el => {
-    el.innerText = el.dataset[lang];
+    const text = el.getAttribute("data-" + lang);
+    if (text) {
+      el.textContent = text;
+    }
   });
 }
 
-window.addEventListener("load", () => {
-  const saved = localStorage.getItem("lang") || "hi";
-  setLang(saved);
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "hi";
+  setLang(savedLang);
 });
