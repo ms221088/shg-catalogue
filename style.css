@@ -181,3 +181,25 @@ body {
   }
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1001;
+}
+
+.lang-btn {
+  padding: 4px 8px;
+  font-size: 14px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.lang-btn:hover {
+  background: #ffffff;
+  color: #1b5e20;
+}
+
