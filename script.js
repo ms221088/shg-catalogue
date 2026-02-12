@@ -21,7 +21,7 @@ function goBack() {
 
 
 // Breadcrumb current page label
-function updateBreadcrumb(lang) {
+document.addEventListener("DOMContentLoaded", () => {
   const current = document.querySelector(".breadcrumb .current");
   if (!current) return;
 
@@ -31,44 +31,6 @@ function updateBreadcrumb(lang) {
     "about.html": { hi: "हमारे बारे में", en: "About Us" },
     "contact.html": { hi: "संपर्क करें", en: "Contact" }
   };
-
-  const page = location.pathname.split("/").pop();
-
-  if (pageMap[page]) {
-    current.textContent = pageMap[page][lang];
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const lang = localStorage.getItem("lang") || "hi";
-  updateBreadcrumb(lang);
-});
-
-
-function setLang(lang) {
-  // Save selected language
-  localStorage.setItem("lang", lang);
-
-  // Update all elements that have translation data
-  document.querySelectorAll("[data-hi][data-en]").forEach(elem => {
-    elem.innerText = elem.getAttribute(`data-${lang}`);
-  });
-
-  // Update breadcrumb current page
-  updateBreadcrumb(lang);
-}
-
-
-//document.addEventListener("DOMContentLoaded", () => {
- // const current = document.querySelector(".breadcrumb .current");
- // if (!current) return;
-
-  //const pageMap = {
-  //  "products.html": { hi: "उत्पाद", en: "Products" },
-  //  "services.html": { hi: "सेवाएँ", en: "Services" },
-   // "about.html": { hi: "हमारे बारे में", en: "About Us" },
-   // "contact.html": { hi: "संपर्क करें", en: "Contact" }
-//  };
 
   const page = location.pathname.split("/").pop();
   const lang = localStorage.getItem("lang") || "hi";
@@ -91,6 +53,7 @@ function toggleMenu() {
   //  elem.innerText = elem.getAttribute(`data-${lang}`);
  // });
 //}
+
 
 
 
