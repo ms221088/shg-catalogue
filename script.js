@@ -47,14 +47,11 @@ function toggleMenu() {
 }
 
 function setLang(lang) {
-  // Update header title
-  document.querySelectorAll(".title-main").forEach(elem => {
+  // Find all elements with a data attribute for this language
+  document.querySelectorAll("[data-hi][data-en]").forEach(elem => {
     elem.innerText = elem.getAttribute(`data-${lang}`);
   });
-
-  // Update nav links
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.innerText = link.getAttribute(`data-${lang}`);
-  });
 }
+
+
 
