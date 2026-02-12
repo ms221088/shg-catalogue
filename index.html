@@ -55,11 +55,14 @@ fetch("footer.html")
   .then(r => r.text())
   .then(d => {
     document.getElementById("footer").innerHTML = d;
+    setLang(localStorage.getItem("lang") || "hi");
   });
+
 </script>
 
 </body>
 </html>
+
 
 
 
