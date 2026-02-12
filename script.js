@@ -39,6 +39,12 @@ function updateBreadcrumb(lang) {
   }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const lang = localStorage.getItem("lang") || "hi";
+  updateBreadcrumb(lang);
+});
+
+
 //document.addEventListener("DOMContentLoaded", () => {
  // const current = document.querySelector(".breadcrumb .current");
  // if (!current) return;
@@ -71,6 +77,7 @@ function toggleMenu() {
   //  elem.innerText = elem.getAttribute(`data-${lang}`);
  // });
 //}
+
 
 
 
