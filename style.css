@@ -269,13 +269,14 @@ body {
 .home-buttons a {
   flex: 1;
   text-align: center;
-  padding: 14px;
+  padding: 16px;
   border-radius: 6px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none;
   color: white;
 }
+
 
 .btn-primary {
   background-color: #2e7d32;
@@ -284,6 +285,7 @@ body {
 .btn-secondary {
   background-color: #1565c0;
 }
+
 
 
 
