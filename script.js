@@ -46,6 +46,24 @@ function toggleMenu() {
   }
 }
 
+const translations = {
+  en: {
+    "title-main": "Self Help Groups – Products & Services"
+  },
+  hi: {
+    "title-main": "स्व-सहायता समूह – उत्पाद एवं सेवाएँ"
+  }
+};
+
+function setLanguage(lang) {
+  // Update header/title
+  document.querySelectorAll(".title-main").forEach(elem => {
+    elem.innerText = translations[lang]["title-main"];
+  });
+
+  // …add other elements to translations here
+}
+
 
 
 
