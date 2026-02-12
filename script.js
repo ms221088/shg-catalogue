@@ -46,24 +46,15 @@ function toggleMenu() {
   }
 }
 
-const translations = {
-  en: {
-    "title-main": "Self Help Groups – Products & Services"
-  },
-  hi: {
-    "title-main": "स्व-सहायता समूह – उत्पाद एवं सेवाएँ"
-  }
-};
-
-function setLanguage(lang) {
-  // Update header/title
+function setLang(lang) {
   document.querySelectorAll(".title-main").forEach(elem => {
-    elem.innerText = translations[lang]["title-main"];
+    elem.innerText = lang === 'hi'
+      ? "स्व-सहायता समूह – उत्पाद एवं सेवाएँ"
+      : "Self Help Groups – Products & Services";
   });
 
-  // …add other elements to translations here
+  // Update nav links
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.innerText = link.getAttribute(`data-${lang}`);
+  });
 }
-
-
-
-
