@@ -47,10 +47,9 @@ function toggleMenu() {
 }
 
 function setLang(lang) {
+  // Update header title
   document.querySelectorAll(".title-main").forEach(elem => {
-    elem.innerText = lang === 'hi'
-      ? "स्व-सहायता समूह – उत्पाद एवं सेवाएँ"
-      : "Self Help Groups – Products & Services";
+    elem.innerText = elem.getAttribute(`data-${lang}`);
   });
 
   // Update nav links
@@ -58,3 +57,4 @@ function setLang(lang) {
     link.innerText = link.getAttribute(`data-${lang}`);
   });
 }
+
