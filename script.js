@@ -47,12 +47,8 @@ function toggleMenu() {
   }
 }
 
-//function setLang(lang) {
-  // Find all elements with a data attribute for this language
-  //document.querySelectorAll("[data-hi][data-en]").forEach(elem => {
-  //  elem.innerText = elem.getAttribute(`data-${lang}`);
- // });
-//}
+
+
 
 
 
