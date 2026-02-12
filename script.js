@@ -45,6 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+function setLang(lang) {
+  // Save selected language
+  localStorage.setItem("lang", lang);
+
+  // Update all elements that have translation data
+  document.querySelectorAll("[data-hi][data-en]").forEach(elem => {
+    elem.innerText = elem.getAttribute(`data-${lang}`);
+  });
+
+  // Update breadcrumb current page
+  updateBreadcrumb(lang);
+}
+
+
 //document.addEventListener("DOMContentLoaded", () => {
  // const current = document.querySelector(".breadcrumb .current");
  // if (!current) return;
@@ -77,6 +91,7 @@ function toggleMenu() {
   //  elem.innerText = elem.getAttribute(`data-${lang}`);
  // });
 //}
+
 
 
 
