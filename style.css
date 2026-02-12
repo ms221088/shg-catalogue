@@ -240,9 +240,10 @@ body {
   margin-top: 20px;
   display: flex;
   gap: 15px;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* Buttons style */
 .home-buttons a {
   text-decoration: none;
   padding: 12px 20px;
@@ -252,29 +253,11 @@ body {
   display: inline-block;
 }
 
-/* Primary Button */
-.btn-primary {
-  background-color: #2e7d32;
-  color: white;
-}
-
-/* Secondary Button */
-.btn-secondary {
-  background-color: #1565c0;
-  color: white;
-}
-
-/* Hover Effect */
-.home-buttons a:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  transition: 0.2s;
-}
-
-/* Mobile Full Width */
+/* Mobile Fix */
 @media (max-width: 768px) {
   .home-buttons {
-    flex-direction: column;
+    flex-direction: column;   /* Stack vertically */
+    align-items: stretch;     /* Full width */
   }
 
   .home-buttons a {
@@ -282,4 +265,6 @@ body {
     text-align: center;
   }
 }
+
+
 
