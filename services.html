@@ -22,8 +22,8 @@
     <label data-hi="श्रेणी" data-en="Category"></label>
     <select id="fCategory" onchange="filterItems()">
       <option value="" data-hi="सभी" data-en="All">All</option>
-      <option value="food" data-hi="खाद्य" data-en="Food">Food</option>
-      <option value="home" data-hi="घरेलू" data-en="Home">Home</option>
+      <option value="agriculture" data-hi="कृषि" data-en="agriculture">agriculture</option>
+      <option value="skill" data-hi="कौशल" data-en="Skill">Drone</option>
     </select>
   </div>
 
@@ -31,8 +31,9 @@
     <label data-hi="उप-श्रेणी" data-en="Subcategory"></label>
     <select id="fSubcategory" onchange="filterItems()">
       <option value="" data-hi="सभी" data-en="All">All</option>
-      <option value="pickle" data-hi="अचार" data-en="Pickle">Pickle</option>
-      <option value="candle" data-hi="मोमबत्ती" data-en="Candle">Candle</option>
+      <option value="drone" data-hi="ड्रोन" data-en="Drone">Drone</option>
+      <option value="tailoring" data-hi="सिलाई" data-en="=Tailoring">Tailoring</option>
+      
     </select>
   </div>
 
@@ -120,6 +121,7 @@ fetch("footer.html").then(r=>r.text()).then(d=>{
 
 </body>
 </html>
+
 
 
 
