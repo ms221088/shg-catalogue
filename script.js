@@ -3,11 +3,18 @@ function filterItems() {
   const block = document.getElementById("fBlock")?.value || "";
 
   document.querySelectorAll(".card").forEach(card => {
-    const show =
-      (cat === "" || card.dataset.category === cat) &&
-      (block === "" || card.dataset.block === block);
 
-    card.style.display = show ? "flex" : "none";
+    const cardCat = card.dataset.category;
+    const cardBlock = card.dataset.block;
+
+    const matchCategory = !cat || cardCat === cat;
+    const matchBlock = !block || cardBlock === block;
+
+    if (matchCategory && matchBlock) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
   });
 }
 
@@ -46,6 +53,7 @@ function toggleMenu() {
     nav.classList.toggle("open");
   }
 }
+
 
 
 
