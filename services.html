@@ -16,8 +16,55 @@
   <span class="current"></span>
 </nav>
 
+    <div class="filters">
 
-  <div class="card">
+  <div class="filter-item">
+    <label data-hi="श्रेणी" data-en="Category"></label>
+    <select id="fCategory" onchange="filterItems()">
+      <option value="" data-hi="सभी" data-en="All">All</option>
+      <option value="food" data-hi="खाद्य" data-en="Food">Food</option>
+      <option value="home" data-hi="घरेलू" data-en="Home">Home</option>
+    </select>
+  </div>
+
+  <div class="filter-item">
+    <label data-hi="उप-श्रेणी" data-en="Subcategory"></label>
+    <select id="fSubcategory" onchange="filterItems()">
+      <option value="" data-hi="सभी" data-en="All">All</option>
+      <option value="pickle" data-hi="अचार" data-en="Pickle">Pickle</option>
+      <option value="candle" data-hi="मोमबत्ती" data-en="Candle">Candle</option>
+    </select>
+  </div>
+
+  <div class="filter-item">
+    <label data-hi="ब्लॉक" data-en="Block"></label>
+    <select id="fBlock" onchange="filterItems()">
+      <option value="" data-hi="सभी" data-en="All">All</option>
+      <option value="dataganj" data-hi="दातागंज" data-en="Dataganj">Dataganj</option>
+      <option value="salarpur" data-hi="सालारपुर" data-en="Salarpur">Salarpur</option>
+    </select>
+  </div>
+
+  <div class="filter-item">
+    <label data-hi="नाम से खोजें" data-en="Search by Name"></label>
+    <input type="text" id="fSearch" onkeyup="filterItems()" placeholder="Search...">
+  </div>
+
+</div>
+
+<p id="resultCount"></p>
+<p id="noResults" style="display:none;" 
+   data-hi="कोई परिणाम नहीं मिला"
+   data-en="No results found">
+   No results found
+</p>
+
+  <div class="card"
+     data-category="agriculture"
+     data-subcategory="drone"
+     data-block="salarpur"
+     data-name="drone spraying">
+    <div>
     <div>
       <h3 data-hi="ड्रोन दीदी सेवा" data-en="Drone Didi Service"></h3>
       <p data-hi="दर: ₹400 प्रति एकड़" data-en="Rate: ₹400 per acre"></p>
@@ -27,7 +74,11 @@
     <img src="images/drone.png" alt="Drone service">
   </div>
   
-  <div class="card">
+  <div class="card"
+     data-category="skill"
+     data-subcategory="tailoring"
+     data-block="salarpur"
+     data-name="sewing tailoring">
     <div>
       <h3 data-hi="सिलाई–कढ़ाई सेवाएँ - कमल स्वयं सहायता समूह, कासिमपुर, सालारपुर" data-en="Tailoring / Sewing Service - Kamla SHG, Kasimpur, Salarpur"></h3>
       <p data-hi="मूल्य: वस्तु के अनुसार अलग-अलग" data-en="Price: Varies by item"></p>
@@ -37,7 +88,11 @@
     <img src="images/RakhiKamalSewingKasimpur.jpg" alt="KamalSHG-Kasimpur-Tailoring-Sewing">
   </div>
 
-<div class="card">
+<div class="card"
+     data-category="skill"
+     data-subcategory="tailoring"
+     data-block="wazirganj"
+     data-name="sewing tailoring">
     <div>
       <h3 data-hi="सिलाई–कढ़ाई सेवाएँ - बनकोटा, वज़ीरगंज" data-en="Tailoring / Sewing Service - Bankota, Wazirganj"></h3>
       <p data-hi="मूल्य: वस्तु के अनुसार अलग-अलग" data-en="Price: Varies by item"></p>
@@ -65,6 +120,7 @@ fetch("footer.html").then(r=>r.text()).then(d=>{
 
 </body>
 </html>
+
 
 
 
