@@ -345,5 +345,21 @@ body {
   }
 }
 
+.breadcrumb {
+  background-color: #e8f5e9;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.breadcrumb a {
+  color: #1b5e20;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.breadcrumb .current {
+  color: #0d47a1;
+  font-weight: bold;
+}
 
 
