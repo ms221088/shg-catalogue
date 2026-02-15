@@ -20,8 +20,17 @@ function filterItems() {
     if (show) visibleCount++;
   });
 
-  document.getElementById("resultCount").textContent =
-    visibleCount + " product(s) found";
+  const lang = localStorage.getItem("lang") || "hi";
+
+let message = "";
+
+if (lang === "hi") {
+  message = visibleCount + " परिणाम मिले";
+} else {
+  message = visibleCount + " result(s) found";
+}
+
+document.getElementById("resultCount").textContent = message;
 
   document.getElementById("noResults").style.display =
     visibleCount === 0 ? "block" : "none";
@@ -62,6 +71,7 @@ function toggleMenu() {
     nav.classList.toggle("open");
   }
 }
+
 
 
 
