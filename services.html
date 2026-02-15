@@ -22,8 +22,8 @@
     <label data-hi="श्रेणी" data-en="Category"></label>
     <select id="fCategory" onchange="filterItems()">
       <option value="" data-hi="सभी" data-en="All">All</option>
-      <option value="agriculture" data-hi="कृषि" data-en="agriculture">agriculture</option>
-      <option value="skill" data-hi="कौशल" data-en="Skill">Drone</option>
+      <option value="agriculture" data-hi="कृषि" data-en="Agriculture">Agriculture</option>
+      <option value="skill" data-hi="कौशल" data-en="Skill">Skill</option>
     </select>
   </div>
 
@@ -32,7 +32,7 @@
     <select id="fSubcategory" onchange="filterItems()">
       <option value="" data-hi="सभी" data-en="All">All</option>
       <option value="drone" data-hi="ड्रोन" data-en="Drone">Drone</option>
-      <option value="tailoring" data-hi="सिलाई" data-en="=Tailoring">Tailoring</option>
+      <option value="tailoring" data-hi="सिलाई" data-en="Tailoring">Tailoring</option>
       
     </select>
   </div>
@@ -41,8 +41,9 @@
     <label data-hi="ब्लॉक" data-en="Block"></label>
     <select id="fBlock" onchange="filterItems()">
       <option value="" data-hi="सभी" data-en="All">All</option>
-      <option value="dataganj" data-hi="दातागंज" data-en="Dataganj">Dataganj</option>
       <option value="salarpur" data-hi="सालारपुर" data-en="Salarpur">Salarpur</option>
+      <option value="wazirganj" data-hi="वज़ीरगंज" data-en="Wazirganj">Wazirganj</option>
+      <option value="dataganj" data-hi="दातागंज" data-en="Dataganj">Dataganj</option>
     </select>
   </div>
 
@@ -121,6 +122,7 @@ fetch("footer.html").then(r=>r.text()).then(d=>{
 
 </body>
 </html>
+
 
 
 
