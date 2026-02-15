@@ -9,7 +9,11 @@ function filterItems() {
   document.querySelectorAll(".card").forEach(card => {
 
     const matchCategory = !cat || card.dataset.category === cat;
-    const matchSub = !sub || card.dataset.subcategory === sub;
+    const subList = card.dataset.subcategory
+  ? card.dataset.subcategory.split(',')
+  : [];
+
+const matchSub = !sub || subList.includes(sub);
     const matchBlock = !block || card.dataset.block === block;
     const matchSearch = !search || card.dataset.name.includes(search);
 
@@ -91,6 +95,7 @@ function updateResultMessage(count) {
 
   document.getElementById("resultCount").textContent = message;
 }
+
 
 
 
