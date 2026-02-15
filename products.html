@@ -24,6 +24,8 @@
       <option value="" data-hi="सभी" data-en="All">All</option>
       <option value="food" data-hi="खाद्य" data-en="Food">Food</option>
       <option value="home" data-hi="घरेलू" data-en="Home">Home</option>
+      <option value="apparel" data-hi="कपड़े" data-en="Apparel">Apparel</option>
+      <option value="home-decor" data-hi="घर की सजावट" data-en="Home-Decor">Home-Decor</option>
     </select>
   </div>
 
@@ -32,7 +34,13 @@
     <select id="fSubcategory" onchange="filterItems()">
       <option value="" data-hi="सभी" data-en="All">All</option>
       <option value="pickle" data-hi="अचार" data-en="Pickle">Pickle</option>
+      <option value="milk-products" data-hi="दुग्ध उत्पाद" data-en="Milk Products">Milk Products</option>
+      <option value="ghee" data-hi="गाय के दूध का घी" data-en="Cow Milk Ghee">Cow Milk Ghee</option>
+      <option value="masale" data-hi="मसाले" data-en="Spices">Spices</option>
+      <option value="flour" data-hi="विभिन्न प्रकार का आँटा" data-en="Multi-Grain Flour">Multi-Grain Flour</option>
       <option value="candle" data-hi="मोमबत्ती" data-en="Candle">Candle</option>
+      <option value="paint" data-hi="पेंट" data-en="Paint">Paint</option>
+      
     </select>
   </div>
 
@@ -76,9 +84,9 @@
   
   <div class="card"
      data-category="home"
-     data-subcategory="candle"
+     data-subcategory="paint"
      data-block="salarpur"
-     data-name="candle">
+     data-name="paint">
     <div>
       <h3 data-hi="प्राकृतिक पेंट - गाय के गोबर से निर्मित" data-en="Natural Paint - Made using Cow Dung"></h3>
       <p data-hi="मूल्य: इमल्शन ₹156.35 प्रति लीटर (₹132.5 + 18% जी एस टी)" data-en="Price: Emulsion ₹156.35 per litre (₹132.5 + 18% GST)"></p>
@@ -107,6 +115,7 @@ fetch("footer.html").then(r=>r.text()).then(d=>{
 
 </body>
 </html>
+
 
 
 
