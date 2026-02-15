@@ -30,7 +30,7 @@ if (lang === "hi") {
   message = visibleCount + " result(s) found";
 }
 
-document.getElementById("resultCount").textContent = message;
+updateResultMessage(visibleCount);
 
   document.getElementById("noResults").style.display =
     visibleCount === 0 ? "block" : "none";
@@ -74,6 +74,23 @@ function toggleMenu() {
 
 
 
+function updateResultMessage(count) {
+  const lang = localStorage.getItem("lang") || "hi";
+
+  let message = "";
+
+  if (lang === "hi") {
+    message = count === 1
+      ? "1 परिणाम मिला"
+      : count + " परिणाम मिले";
+  } else {
+    message = count === 1
+      ? "1 result found"
+      : count + " results found";
+  }
+
+  document.getElementById("resultCount").textContent = message;
+}
 
 
 
