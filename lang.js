@@ -8,9 +8,16 @@ function setLang(lang) {
       el.textContent = text;
     }
   });
+
+// Re-run filters after language change (if filter exists)
+if (typeof filterItems === "function") {
+  filterItems();
+}
+  
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem("lang") || "hi";
   setLang(savedLang);
 });
+
