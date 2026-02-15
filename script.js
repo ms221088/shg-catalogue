@@ -8,7 +8,11 @@ function filterItems() {
 
   document.querySelectorAll(".card").forEach(card => {
 
-    const matchCategory = !cat || card.dataset.category === cat;
+    const categoryList = card.dataset.category
+  ? card.dataset.category.split(',')
+  : [];
+
+const matchCategory = !cat || categoryList.includes(cat);
     const subList = card.dataset.subcategory
   ? card.dataset.subcategory.split(',')
   : [];
@@ -95,6 +99,7 @@ function updateResultMessage(count) {
 
   document.getElementById("resultCount").textContent = message;
 }
+
 
 
 
