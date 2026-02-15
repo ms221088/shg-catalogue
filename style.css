@@ -321,6 +321,11 @@ body {
   font-size: 14px;
 }
 
+.filter-item label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
 .filters select,
 .filters input {
   padding: 6px;
@@ -361,5 +366,6 @@ body {
   color: #0d47a1;
   font-weight: bold;
 }
+
 
 
