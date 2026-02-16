@@ -131,20 +131,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.addEventListener("load", function () {
 
-  const currentPage = window.location.pathname.split("/").pop();
+  let page = window.location.pathname.split("/").pop();
+
+  // If homepage without index.html
+  if (page === "" || page === undefined) {
+    page = "index.html";
+  }
 
   document.querySelectorAll(".nav-links a").forEach(link => {
-    const linkHref = link.getAttribute("href");
+    const href = link.getAttribute("href");
 
-    if (
-      linkHref === currentPage ||
-      (currentPage === "" && linkHref === "index.html")
-    ) {
+    if (href === page) {
       link.classList.add("active");
     }
   });
 
 });
+
 
 
 
