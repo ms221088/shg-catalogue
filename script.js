@@ -1,3 +1,6 @@
+/* ===============================
+   FILTER FUNCTION
+================================ */
 function filterItems() {
   const cat = document.getElementById("fCategory")?.value || "";
   const sub = document.getElementById("fSubcategory")?.value || "";
@@ -9,17 +12,17 @@ function filterItems() {
   document.querySelectorAll(".card").forEach(card => {
 
     const categoryList = card.dataset.category
-  ? card.dataset.category.split(',')
-  : [];
+      ? card.dataset.category.split(',')
+      : [];
 
-const matchCategory = !cat || categoryList.includes(cat);
     const subList = card.dataset.subcategory
-  ? card.dataset.subcategory.split(',')
-  : [];
+      ? card.dataset.subcategory.split(',')
+      : [];
 
-const matchSub = !sub || subList.includes(sub);
+    const matchCategory = !cat || categoryList.includes(cat);
+    const matchSub = !sub || subList.includes(sub);
     const matchBlock = !block || card.dataset.block === block;
-    const matchSearch = !search || card.dataset.name.includes(search);
+    const matchSearch = !search || card.dataset.name.toLowerCase().includes(search);
 
     const show = matchCategory && matchSub && matchBlock && matchSearch;
 
@@ -28,72 +31,18 @@ const matchSub = !sub || subList.includes(sub);
     if (show) visibleCount++;
   });
 
-  const lang = localStorage.getItem("lang") || "hi";
+  updateResultMessage(visibleCount);
 
-let message = "";
-
-if (lang === "hi") {
-  message = visibleCount + " परिणाम मिले";
-} else {
-  message = visibleCount + " result(s) found";
-}
-
-updateResultMessage(visibleCount);
-
-  document.getElementById("noResults").style.display =
-    visibleCount === 0 ? "block" : "none";
-}
-
-function goBack() {
-  if (document.referrer) {
-    history.back();
-  } else {
-    location.href = "index.html";
+  const noResults = document.getElementById("noResults");
+  if (noResults) {
+    noResults.style.display = visibleCount === 0 ? "block" : "none";
   }
 }
 
 
-// Breadcrumb current page label
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* ===== Breadcrumb Logic ===== */
-  const current = document.querySelector(".breadcrumb .current");
-
-  const pageMap = {
-    "products.html": { hi: "उत्पाद", en: "Products" },
-    "services.html": { hi: "सेवाएँ", en: "Services" },
-    "about.html": { hi: "हमारे बारे में", en: "About Us" },
-    "contact.html": { hi: "संपर्क करें", en: "Contact" }
-  };
-
-  const page = location.pathname.split("/").pop();
-  const lang = localStorage.getItem("lang") || "hi";
-
-  if (current && pageMap[page]) {
-    current.textContent = pageMap[page][lang];
-  }
-
-  /* ===== Active Navigation Highlight ===== */
-
-const currentPage = window.location.href;
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-  if (currentPage.includes(link.getAttribute("href"))) {
-    link.classList.add("active");
-  }
-});
-
-});
-
-function toggleMenu() {
-  const nav = document.getElementById("navLinks");
-  if (nav) {
-    nav.classList.toggle("open");
-  }
-}
-
-
-
+/* ===============================
+   RESULT MESSAGE
+================================ */
 function updateResultMessage(count) {
   const lang = localStorage.getItem("lang") || "hi";
 
@@ -109,51 +58,77 @@ function updateResultMessage(count) {
       : count + " results found";
   }
 
-  document.getElementById("resultCount").textContent = message;
+  const resultEl = document.getElementById("resultCount");
+  if (resultEl) {
+    resultEl.textContent = message;
+  }
 }
 
 
+/* ===============================
+   GO BACK
+================================ */
+function goBack() {
+  if (document.referrer) {
+    history.back();
+  } else {
+    location.href = "index.html";
+  }
+}
 
+
+/* ===============================
+   ACTIVE NAV + BREADCRUMB
+================================ */
 document.addEventListener("DOMContentLoaded", function () {
 
-  const page = window.location.pathname.split("/").pop() || "index.html";
-
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    const linkHref = link.getAttribute("href");
-
-    if (linkHref === page) {
-      link.classList.add("active");
-    }
-  });
-
-});
-
-
-window.addEventListener("load", function () {
+  /* ===== ACTIVE NAVIGATION ===== */
 
   let page = window.location.pathname.split("/").pop();
 
-  // If homepage without index.html
-  if (page === "" || page === undefined) {
+  // If homepage opened without index.html
+  if (!page || page === "") {
     page = "index.html";
   }
 
   document.querySelectorAll(".nav-links a").forEach(link => {
     const href = link.getAttribute("href");
 
+    // Remove active first (clean reset)
+    link.classList.remove("active");
+
     if (href === page) {
       link.classList.add("active");
     }
   });
 
+
+  /* ===== BREADCRUMB LOGIC ===== */
+
+  const current = document.querySelector(".breadcrumb .current");
+
+  const pageMap = {
+    "products.html": { hi: "उत्पाद", en: "Products" },
+    "services.html": { hi: "सेवाएँ", en: "Services" },
+    "about.html": { hi: "हमारे बारे में", en: "About Us" },
+    "contact.html": { hi: "संपर्क करें", en: "Contact" }
+  };
+
+  const lang = localStorage.getItem("lang") || "hi";
+
+  if (current && pageMap[page]) {
+    current.textContent = pageMap[page][lang];
+  }
+
 });
 
 
-
-
-
-
-
-
-
-
+/* ===============================
+   MOBILE MENU
+================================ */
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  if (nav) {
+    nav.classList.toggle("open");
+  }
+}
