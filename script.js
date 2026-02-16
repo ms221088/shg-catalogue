@@ -74,13 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ===== Active Navigation Highlight ===== */
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    const linkPage = link.getAttribute("href");
 
-    if (linkPage === page || (page === "" && linkPage === "index.html")) {
-      link.classList.add("active");
-    }
-  });
+const currentPage = window.location.href;
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  if (currentPage.includes(link.getAttribute("href"))) {
+    link.classList.add("active");
+  }
+});
 
 });
 
@@ -110,6 +111,7 @@ function updateResultMessage(count) {
 
   document.getElementById("resultCount").textContent = message;
 }
+
 
 
 
