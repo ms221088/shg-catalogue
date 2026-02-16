@@ -367,5 +367,11 @@ body {
   font-weight: bold;
 }
 
+.nav-links a.active {
+  background-color: #ffffff;
+  color: #1b5e20;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
 
 
