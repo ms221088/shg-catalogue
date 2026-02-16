@@ -55,8 +55,9 @@ function goBack() {
 
 // Breadcrumb current page label
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===== Breadcrumb Logic ===== */
   const current = document.querySelector(".breadcrumb .current");
-  if (!current) return;
 
   const pageMap = {
     "products.html": { hi: "उत्पाद", en: "Products" },
@@ -68,9 +69,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const page = location.pathname.split("/").pop();
   const lang = localStorage.getItem("lang") || "hi";
 
-  if (pageMap[page]) {
+  if (current && pageMap[page]) {
     current.textContent = pageMap[page][lang];
   }
+
+  /* ===== Active Navigation Highlight ===== */
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === page || (page === "" && linkPage === "index.html")) {
+      link.classList.add("active");
+    }
+  });
+
 });
 
 function toggleMenu() {
@@ -99,6 +110,7 @@ function updateResultMessage(count) {
 
   document.getElementById("resultCount").textContent = message;
 }
+
 
 
 
