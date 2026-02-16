@@ -23,7 +23,8 @@
     <select id="fCategory" onchange="filterItems()">
       <option value="" data-hi="सभी" data-en="All">All</option>
       <option value="food" data-hi="खाद्य" data-en="Food">Food</option>
-      <option value="home" data-hi="घरेलू" data-en="Home">Home</option>
+      <option value="home-improvement" data-hi="घरेलू" data-en="Home Improvement">Home Improvement</option>
+      <option value="building-material" data-hi="निर्माण सामग्री" data-en="Building Material">Building Material</option>
       <option value="apparel" data-hi="कपड़े" data-en="Apparel">Apparel</option>
       <option value="home-decor" data-hi="घर की सजावट" data-en="Home-Decor">Home-Decor</option>
     </select>
@@ -76,7 +77,7 @@
 </p>
 
   <div class="card"
-     data-category="home,home-decor"
+     data-category="home-improvement,home-decor,building-material"
      data-subcategory="paint"
      data-block="salarpur"
      data-name="paint">
@@ -239,6 +240,7 @@ fetch("footer.html").then(r=>r.text()).then(d=>{
 
 </body>
 </html>
+
 
 
 
