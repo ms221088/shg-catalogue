@@ -114,7 +114,19 @@ function updateResultMessage(count) {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
 
+  const page = window.location.pathname.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    const linkHref = link.getAttribute("href");
+
+    if (linkHref === page) {
+      link.classList.add("active");
+    }
+  });
+
+});
 
 
 
