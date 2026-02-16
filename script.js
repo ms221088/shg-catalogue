@@ -1,6 +1,6 @@
-/* ===============================
+/* =====================================
    FILTER FUNCTION
-================================ */
+===================================== */
 function filterItems() {
   const cat = document.getElementById("fCategory")?.value || "";
   const sub = document.getElementById("fSubcategory")?.value || "";
@@ -40,9 +40,9 @@ function filterItems() {
 }
 
 
-/* ===============================
+/* =====================================
    RESULT MESSAGE
-================================ */
+===================================== */
 function updateResultMessage(count) {
   const lang = localStorage.getItem("lang") || "hi";
 
@@ -65,9 +65,9 @@ function updateResultMessage(count) {
 }
 
 
-/* ===============================
+/* =====================================
    GO BACK
-================================ */
+===================================== */
 function goBack() {
   if (document.referrer) {
     history.back();
@@ -77,55 +77,36 @@ function goBack() {
 }
 
 
-/* ===============================
-   ACTIVE NAV + BREADCRUMB
-================================ */
+/* =====================================
+   ACTIVE NAVIGATION (GitHub Safe)
+===================================== */
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ===== ACTIVE NAVIGATION ===== */
+  let path = window.location.pathname;
 
-  let page = window.location.pathname.split("/").pop();
-
-  // If homepage opened without index.html
-  if (!page || page === "") {
-    page = "index.html";
+  // If homepage (project root)
+  if (path.endsWith("/") || path.split("/").pop() === "") {
+    path = "index.html";
+  } else {
+    path = path.split("/").pop();
   }
 
   document.querySelectorAll(".nav-links a").forEach(link => {
-    const href = link.getAttribute("href");
-
-    // Remove active first (clean reset)
     link.classList.remove("active");
 
-    if (href === page) {
+    const href = link.getAttribute("href");
+
+    if (href === path) {
       link.classList.add("active");
     }
   });
 
-
-  /* ===== BREADCRUMB LOGIC ===== */
-
-  const current = document.querySelector(".breadcrumb .current");
-
-  const pageMap = {
-    "products.html": { hi: "उत्पाद", en: "Products" },
-    "services.html": { hi: "सेवाएँ", en: "Services" },
-    "about.html": { hi: "हमारे बारे में", en: "About Us" },
-    "contact.html": { hi: "संपर्क करें", en: "Contact" }
-  };
-
-  const lang = localStorage.getItem("lang") || "hi";
-
-  if (current && pageMap[page]) {
-    current.textContent = pageMap[page][lang];
-  }
-
 });
 
 
-/* ===============================
+/* =====================================
    MOBILE MENU
-================================ */
+===================================== */
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
   if (nav) {
